@@ -1,0 +1,79 @@
+.header{
+    background: $gray;
+    padding: 29px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999999;
+    transition: padding .4s ease-in-out;
+    &_padding{
+        padding: 5px 0;
+    }
+    &__logo{
+        font-weight: 500;
+        font-size: 25px;
+        text-transform: uppercase;
+        color:#000;
+        margin-left: 50px;
+    }
+    &-slider{
+        background:#EEEEEE;
+        padding: 144px 0 77px;
+        .swiper-button-prev, .swiper-button-next{
+            color:$red;
+            opacity: .3;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    list-style: none;
+    &__link{
+        display: block;
+        text-transform: uppercase;
+        font-weight: 700;
+        color:#000;
+        padding:12px 38px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .router-link-active{
+        color:$red;
+        text-shadow: none;
+    }
+}
+.header-slide {
+    display: flex;
+    justify-content: space-between;
+    &__info{
+        flex:1;
+    }
+    &__title {
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 14px;
+    }
+
+    &__subtitle {
+        font-family:$second-font;
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 14px;
+    }
+    &__text {
+        font-family:$second-font;
+        margin-bottom: 50px;
+    }
+    &__img{
+        flex: 1;
+        margin-left: 50px;
+    }
+   
+}

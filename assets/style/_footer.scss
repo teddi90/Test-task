@@ -1,0 +1,18 @@
+.footer {
+    background:$gray;
+    padding: 34px 0;
+    &__wrapper {
+        display: flex;
+    }
+    &__contacts {
+        width: 42%;
+        margin-left: 70px;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &__social {
+        width: 57%;
+    }
+}

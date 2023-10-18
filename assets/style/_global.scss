@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+html {
+    scroll-behavior: smooth;
+  }
+@mixin font-face($font-family, $font-file-name, $font-weight: 400, $font-style: normal) {
+    @font-face {
+        font-display: swap;
+        font-family: $font-family;
+        font-style: $font-style;
+        font-weight: $font-weight;
+        src: local(''),
+        url('#{$path-fonts}#{$font-file-name}.woff2') format('woff2'),
+        url('#{$path-fonts}#{$font-file-name}.woff') format('woff');
+    }
+}
+@include font-face("Montserrat", montserrat-v26-latin-regular);
+@include font-face("Montserrat", montserrat-v26-latin-500,500);
+@include font-face("Montserrat", montserrat-v26-latin-700,700);
+@include font-face("Inter", inter-v13-latin-regular);
+@include font-face("Inter", inter-v13-latin-500,500);
+
+
+body{
+    font-family: $main-font, sans-serif ;
+    font-size: $font-size;
+    color:#000;
+}
+.container{
+    max-width:1200px;
+    padding: 0 16px;
+    margin:0 auto;
+}
+.btn{
+    background-color: $red;
+    border:none;
+    font-family: $second-font;
+    font-size: 20px;
+    padding: 15px 49px;
+    color:#fff;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color .4s ease-in-out;
+    &:hover{
+        background-color:rgba($color: $red, $alpha: .7)
+    }
+}
+.title{
+    text-align: center;
+    padding: 30px 0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.slide-section{
+    padding-bottom: 70px;
+    position: relative;
+    .container{
+        position: relative;
+    }
+    .swiper-pagination-bullet{
+        background: $red;
+        
+        &-active{
+            background: $red;
+        }
+    }
+}
+
+// SLide
+.slide {
+    display: flex;
+    padding: 0 106px 0 79px;
+    position: relative;
+    &__info{
+        flex:1;
+        padding-right: 38px;
+    }
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        margin:50px 0 23px;
+    }
+
+    &__subtitle {
+        font-family:$second-font;
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+    &__text {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 24px;
+    }
+    &__img-wrapper{
+        flex: 1;
+        position: relative;
+        overflow: hidden;
+        width: 476px;
+        height: 383px;
+    }
+    &__img{
+        position: absolute;
+        object-fit: cover;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 100%;
+        width: 100%;
+    }
+    &__arrow{
+        border:none;
+        background: transparent;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 99999;
+        &:hover{
+            svg{
+                color:$red;
+            }
+        }
+        svg{
+            color:#000;
+            transition: color .4s ease-in-out;
+        }
+        &_prev{
+            left: 17px;
+        }
+        &_next{
+            right: 52px;
+        }
+    }
+    
+}
